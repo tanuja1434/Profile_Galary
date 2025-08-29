@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile Galary</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-row">
+      <button id="navToggle" class="hamburger" aria-label="Menu" aria-controls="navMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <h1 class="site-title">Profile Galary</h1>
+
+      <!-- Search bar beside the profile title -->
+      <input id="searchInput" class="search-input inline" type="search" placeholder="Search photos…" aria-label="Search photos" />
+    </div>
+
+    <nav class="site-nav">
+      <ul id="navMenu" class="nav-menu" role="menubar">
+        <li role="none"><a role="menuitem" href="#" class="nav-link">Home</a></li>
+        <li role="none"><a role="menuitem" href="#about" class="nav-link">About</a></li>
+      </ul>
+    </nav>
+
+    <div class="controls">
+      <!-- Icon-only search button -->
+      <button id="searchBtn" class="btn btn-search" aria-label="Search">🔍</button>
+
+      <button id="modeBtn" class="btn" aria-pressed="false" title="Toggle dark/light">🌙 Dark mode</button>
+
+      <label class="toggle" for="favToggle">
+        <input id="favToggle" type="checkbox" />
+        <span>Show favorites only</span>
+      </label>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section aria-labelledby="galleryTitle">
+      <div class="bar">
+        <h2 id="galleryTitle">Gallery</h2>
+        <span id="countBadge" class="badge" aria-live="polite">0 photos</span>
+      </div>
+
+      <ul id="gallery" class="gallery" role="list">
+        <noscript>
+          <li class="card">
+            <figure>
+              <img src="https://picsum.photos/seed/noscript1/800/600" alt="Example photo 1" />
+              <figcaption>Example (no JavaScript)</figcaption>
+            </figure>
+          </li>
+          <li class="card">
+            <figure>
+              <img src="https://picsum.photos/seed/noscript2/800/600" alt="Example photo 2" />
+              <figcaption>Example (no JavaScript)</figcaption>
+            </figure>
+          </li>
+          <li class="card">
+            <figure>
+              <img src="https://picsum.photos/seed/noscript3/800/600" alt="Example photo 3" />
+              <figcaption>Example (no JavaScript)</figcaption>
+            </figure>
+          </li>
+        </noscript>
+      </ul>
+    </section>
+
+    <section id="about" class="notes">
+      <details open>
+        <summary>Progressive vs. Responsive — what’s the difference?</summary>
+        <div class="note-body">
+          <p><strong>Responsive design</strong> adapts layout to different screen sizes (CSS Grid/Flex + media queries). This page uses Grid to reflow cards from many columns on desktop down to a single column on phones.</p>
+          <p><strong>Progressive enhancement</strong> starts with a basic, accessible experience, then layers on JS features. Here, the <code>&lt;noscript&gt;</code> fallback shows photos even if JS is off. With JS enabled, we enhance with dynamic rendering (loops), conditionals (favorites filter), a theme toggle, and a search filter.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 Profile Galary — HTML, CSS Grid/Flexbox, and vanilla JS.</small>
+  </footer>
+</body>
+</html>
